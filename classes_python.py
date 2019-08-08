@@ -12,6 +12,16 @@ class Rectangle(object):
     def __repr__(self):
         return f'Rectangle with width={self.width} and height={self.height}'
 
+    def __eq__(self, other):
+        return (self.width == other.width) and (self.height == other.height)
+
 
 rect1 = Rectangle(10, 40)
-print(rect1)
+rect2 = Rectangle(40, 10)
+print(rect1 == rect2)  # False
+
+# adicionando os valores do primeiro retângulo ao segundo
+rect2.width = rect1.width
+rect2.height = rect1.height
+
+print(rect1 == rect2)  # True
