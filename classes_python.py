@@ -21,10 +21,12 @@ class Rectangle(object):
     def __add__(self, other):
         width = self.width + other.width
         height = self.height + other.height
-        return width, height
+        return Rectangle(width=width, height=height)
 
 
 rect1 = Rectangle(10, 40)
 rect2 = Rectangle(40, 10)
 
-print(rect1 + rect2)
+rect3 = rect1 + rect2
+
+print(rect3)
