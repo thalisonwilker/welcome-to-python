@@ -38,11 +38,11 @@ class Rectangle(object):
         height = self.height / other.height
         return Rectangle(width=width, height=height)
 
+    def __lt__(self, other):
+        return self.area() < other.area()
 
-rect1 = Rectangle(10, 40)
-rect2 = Rectangle(40, 10)
 
-print(rect1 + rect2) # Adição
-print(rect1 - rect2) # Subtração
-print(rect1 * rect2) # Multiplicação
-print(rect1 / rect2) # Divisão
+rect1 = Rectangle(4, 5)
+rect2 = Rectangle(3, 4)
+
+print( rect2 < rect1 )
