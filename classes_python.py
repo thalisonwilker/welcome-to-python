@@ -18,14 +18,13 @@ class Rectangle(object):
         else:
             raise ArithmeticError(f'{type(other)} is not a Rectangle class instance')
 
+    def __add__(self, other):
+        width = self.width + other.width
+        height = self.height + other.height
+        return width, height
+
 
 rect1 = Rectangle(10, 40)
 rect2 = Rectangle(40, 10)
 
-print(rect1 == rect2)  # False
-
-# adicionando os valores do primeiro retângulo ao segundo
-rect2.width = rect1.width
-rect2.height = rect1.height
-
-print(rect1 == 4)  # True
+print(rect1 + rect2)
