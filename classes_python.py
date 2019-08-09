@@ -23,10 +23,26 @@ class Rectangle(object):
         height = self.height + other.height
         return Rectangle(width=width, height=height)
 
+    def __sub__(self, other):
+        width = self.width - other.width
+        height = self.height - other.height
+        return Rectangle(width=width, height=height)
+
+    def __mul__(self, other):
+        width = self.width * other.width
+        height = self.height * other.height
+        return Rectangle(width=width, height=height)
+
+    def __truediv__(self, other):
+        width = self.width / other.width
+        height = self.height / other.height
+        return Rectangle(width=width, height=height)
+
 
 rect1 = Rectangle(10, 40)
 rect2 = Rectangle(40, 10)
 
-rect3 = rect1 + rect2
-
-print(rect3)
+print(rect1 + rect2) # Adição
+print(rect1 - rect2) # Subtração
+print(rect1 * rect2) # Multiplicação
+print(rect1 / rect2) # Divisão
